@@ -9,9 +9,9 @@ class Post < ActiveRecord::Base
 
     def clickbait?
         result = false
-        indicators = [/Won't Believe/, /Secret/, /Top \d\d?/, /Guess/]
-        indicators.each do |indicator|
-            if self.title.match(indicator)
+        titles = [/Won't Believe/, /Secret/, /Top \d\d?/, /Guess/]
+        titles.each do |title|
+            if self.title.match(title)
                 result = true
             end
         end
