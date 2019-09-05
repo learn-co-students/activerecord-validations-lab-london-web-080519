@@ -12,6 +12,7 @@ RSpec.describe Post, type: :model do
     }
   end
 
+
   let(:valid_post) { Post.new(valid_attrs) }
   let(:missing_title) { Post.new(valid_attrs.except(:title)) }
   let(:short_content) { Post.new(valid_attrs.merge(content: "too short")) }
@@ -38,8 +39,8 @@ RSpec.describe Post, type: :model do
   it "is invalid with a category outside the choices" do
     expect(invalid_cat).to be_invalid
   end
-
   it "is invalid if not clickbait" do
     expect(non_clickbait).to be_invalid
   end
+
 end
